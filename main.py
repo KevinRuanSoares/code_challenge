@@ -150,10 +150,8 @@ class MiniVenmo:
     def render_feed(self, feed):
         # Bobby paid Carol $5.00 for Coffee
         # Carol paid Bobby $15.00 for Lunch
-        for payment in feed.get("payments"):
-            print(f"{payment.actor.username} paid {payment.target.username} ${payment.amount} for {payment.note}")
-        for friend in feed.get("friends"):
-            print(f"{self.username}added ads friend{friend.username}")
+        print(f"{payment.actor.username} paid {payment.target.username} ${payment.amount} for {payment.note}" for payment in feed.get("payments"))
+        print(f"{self.username}added ads friend{friend.username}" for friend in feed.get("friends"))
  
     @classmethod
     def run(cls):
